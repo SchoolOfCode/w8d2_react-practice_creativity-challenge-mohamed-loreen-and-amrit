@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-function Input() {
+function Input({addToList}) {
       const [inputValue, setInputValue] = useState("");
       function getValue(value) {
             setInputValue(value);
@@ -14,7 +14,7 @@ function Input() {
                         onChange={(event) => getValue(event.target.value)}
                         placeholder="Enter your task!"
                   />
-                  <button>ADD TO LIST</button>
+                  <button onClick={() => addToList(inputValue)}>ADD TO LIST</button>
             </div>
       );
 }
